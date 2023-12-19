@@ -6,6 +6,7 @@ import mongoose from 'mongoose';
 
 // ROUTES v1
 import adminUserRoutes from './modules/adminUser/v1/adminUser.routes';
+import testRouter from './test.controller';
 import { errorHandler, notFoundHandler } from './middlewares/errorHandler';
 
 const PORT = process.env.PORT || 8080;
@@ -18,17 +19,17 @@ const main = async () => {
         app.use(express.json());
 
         // DB connection
-        mongoose
-            .connect(process.env.MONGO_URL_1 || '')
-            .then(() => {
-                console.log('DB connection successfully!');
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        // mongoose
+        //     .connect(process.env.MONGO_URL_1 || '')
+        //     .then(() => {
+        //         console.log('DB connection successfully!');
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     });
 
         // ROUTES v1
-        app.use('/api/v1/admin', adminUserRoutes);
+        app.use('/api/v1/test', testRouter);
 
         // 404 not found handler
         app.use(notFoundHandler);

@@ -6,9 +6,9 @@
     "author": "Code19",
     "license": "MIT",
     "scripts": {
-        "dev": "nodemon ./src/index.ts",
+        "dev": "nodemon ./src/app.ts",
         "build": "rimraf ./dist && tsc",
-        "start": "node dist/index.js",
+        "start": "node dist/app.js",
         "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
     },
     "dependencies": {
